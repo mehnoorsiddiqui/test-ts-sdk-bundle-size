@@ -1,0 +1,28 @@
+{
+  "name": "getting-started-using-a-configuration",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack && node analyze-bundle.js",
+    "start": "serve dist"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "user-management-apilib": "^1.0.0",
+    "user-management-apilib-exports": "^1.0.9"
+  },
+  "devDependencies": {
+    "path-browserify": "^1.0.1",
+    "serve": "^12.0.0",
+    "stream-browserify": "^3.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
+}
