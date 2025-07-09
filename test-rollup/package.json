@@ -17,8 +17,6 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "rollup-plugin-polyfill-node": "^0.13.0",
-    "user-management-apilib": "^1.0.0",
-    "user-management-apilib-exports": "^1.0.9"
+    "rollup-plugin-polyfill-node": "^0.13.0"
   }
 }
