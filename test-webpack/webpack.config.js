@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 
 export default {
   mode: 'production', // Enables tree-shaking and minification
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -35,7 +35,8 @@ export default {
         buffer: 'buffer/',
         stream: 'stream-browserify',
         process: 'process/browser',
-    }
+    },
+     extensions: [".ts", ".js"]
   },
   plugins: [
     new webpack.ProvidePlugin({
