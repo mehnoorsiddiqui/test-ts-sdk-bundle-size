@@ -6,13 +6,14 @@ import fs from 'fs';
 const outputFile = 'dist/output.js';
 
 build({
-  entryPoints: ['src/index.js'],
+  entryPoints: ['src/index.ts'],
   bundle: true,
   outfile: outputFile,
   minify: true,
   treeShaking: true,
   metafile: true,
   platform: 'node',
+  sourcemap: true
 }).then(result => {
   console.log('✅ Build succeeded.');
 

@@ -2,7 +2,7 @@
   "name": "test-esbuild",
   "version": "1.0.0",
   "description": "Minimal esbuild JS project",
-  "main": "dist/main.js",
+  "main": "dist/output.js",
   "type": "module",
   "scripts": {
     "build": "node esbuild.config.js",
@@ -11,7 +11,9 @@
   },
   "devDependencies": {
     "esbuild": "^0.20.0",
-    "stream-browserify": "^3.0.0"
+    "stream-browserify": "^3.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^24.0.12"
   },
   "dependencies": {
     "brotli-size": "^4.0.0",
