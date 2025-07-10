@@ -1,11 +1,13 @@
+
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import typescript from '@rollup/plugin-typescript';
 import { builtinModules } from 'module';
 import filesize from 'rollup-plugin-filesize';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: {
     file: 'dist/bundle.js', // ESM file extension
     format: 'esm',           // Native ES module format
@@ -21,7 +23,12 @@ export default {
     }),
     commonjs(),
     json(),
-    filesize() 
+    typescript({
+      tsconfig: './tsconfig.json',
+      sourceMap: true,
+      declaration: true
+    }),
+    filesize()
   ],
   treeshake: {
     moduleSideEffects: false // only include used code
