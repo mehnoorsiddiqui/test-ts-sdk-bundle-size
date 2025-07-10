@@ -1,1 +1,0 @@
-console.log('Webpack configuration updated to use TypeScript entry point.');
