@@ -7,16 +7,16 @@ get_bundle_size() {
   local BUNDLE_FILE=""
 
   case $BUNDLER in
-    test-vite)
+    test-vite* )
       BUNDLE_FILE=$(find "$PROJECT_PATH/dist/assets" -name "*.js" | head -n 1)
       ;;
-    test-webpack | test-rollup)
+    test-webpack* | test-rollup* )
       BUNDLE_FILE="$PROJECT_PATH/dist/bundle.js"
       ;;
-    test-esbuild)
+    test-esbuild* )
       BUNDLE_FILE="$PROJECT_PATH/dist/output.js"
       ;;
-    *)
+    * )
       echo "❌ Unknown bundler: $BUNDLER" >&2
       exit 1
       ;;
