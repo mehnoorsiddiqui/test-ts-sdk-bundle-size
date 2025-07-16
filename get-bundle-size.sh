@@ -10,17 +10,14 @@ get_bundle_size() {
     test-vite)
       BUNDLE_FILE=$(find "$PROJECT_PATH/dist/assets" -name "*.js" | head -n 1)
       ;;
-    test-webpack)
-      BUNDLE_FILE="$PROJECT_PATH/dist/bundle.js"
-      ;;
-    test-rollup)
+    test-webpack | test-rollup)
       BUNDLE_FILE="$PROJECT_PATH/dist/bundle.js"
       ;;
     test-esbuild)
       BUNDLE_FILE="$PROJECT_PATH/dist/output.js"
       ;;
     *)
-      echo "❌ Unknown bundler: $BUNDLER"
+      echo "❌ Unknown bundler: $BUNDLER" >&2
       exit 1
       ;;
   esac
@@ -31,3 +28,11 @@ get_bundle_size() {
     echo "0B"
   fi
 }
+
+# Entry point
+if [[ $# -ne 2 ]]; then
+  echo "Usage: $0 <bundler> <project-dir>" >&2
+  exit 1
+fi
+
+get_bundle_size "$1" "$2"
