@@ -7,9 +7,6 @@ get_bundle_size() {
   local BUNDLE_FILE=""
 
   case $BUNDLER in
-    test-vite* )
-      BUNDLE_FILE=$(find "$PROJECT_PATH/dist/assets" -name "*.js" | head -n 1)
-      ;;
     test-webpack* | test-rollup* )
       BUNDLE_FILE="$PROJECT_PATH/dist/bundle.js"
       ;;
