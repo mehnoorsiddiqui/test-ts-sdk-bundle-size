@@ -30,7 +30,7 @@ export default {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-    module: {
+  module: {
     rules: [
       {
         test: /\.tsx?$/,
@@ -41,11 +41,11 @@ export default {
   },
   resolve: {
     fallback: {
-        buffer: 'buffer/',
-        stream: 'stream-browserify',
-        process: 'process/browser',
+      buffer: 'buffer/',
+      stream: 'stream-browserify',
+      process: 'process/browser',
     },
-     extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"]
   },
   plugins: [
     new webpack.ProvidePlugin({
